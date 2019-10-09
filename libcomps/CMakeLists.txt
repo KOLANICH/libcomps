@@ -58,3 +58,18 @@ endif()
 if(ENABLE_DOCS)
 add_subdirectory (docs EXCLUDE_FROM_ALL)
 endif()
+
+
+set(CPACK_PACKAGE_NAME libcomps)
+set(CPACK_PACKAGE_VERSION_MAJOR "${libcomps_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${libcomps_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH "${libcomps_VERSION_PATCH}")
+
+set(CPACK_PACKAGE_VENDOR "Red Hat")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Libcomps is alternative for yum.comps library. It's written in pure C as library and there's bindings for python2 and python3.")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/rpm-software-management/libcomps")
+set(CPACK_PACKAGE_CONTACT "https://github.com/rpm-software-management/libcomps")
+set(CPACK_PACKAGE_CHECKSUM "SHA512")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/../COPYING")
+set(CPACK_GENERATOR "DEB")
+include(CPack)
